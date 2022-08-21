@@ -6,6 +6,9 @@ import AddTask from './components/AddTask';
 
 // Component using JSX
 const App = () => {
+  const [showAddTask, setShowAddtask] = useState(false)
+  // Setting this to false means that when you load the page the form will not show 
+
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -54,7 +57,8 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      <AddTask onAdd={addTask} />
+      {/* Shorter way of doing the turnary. If showAddTask is true then do the AddTask component */}
+      {showAddTask && <AddTask onAdd={addTask} />}
       {/* Use the Task component within the Tasks component */}
       {/* Use the fsc above to make it a prop */}
       {tasks.length > 0 ? (
