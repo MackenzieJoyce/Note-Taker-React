@@ -7,7 +7,7 @@
   </br></br>
 
   ## Table of Contents
-  - [Testing](#testing)
+  - [Learning Points](#learning-points)
   - [Credits](#credits)
   - [License](#license)
   </br></br>
