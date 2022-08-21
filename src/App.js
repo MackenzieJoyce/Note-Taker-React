@@ -1,10 +1,12 @@
-// Component using JSX 
-function App() {
+import Header from './components/Header';
+
+// Component using JSX
+const App = () => {
   return (
     <div className="container">
-      <h1>Hello from React</h1>
+      <Header />
     </div>
   );
-}
+};
 
 export default App;
