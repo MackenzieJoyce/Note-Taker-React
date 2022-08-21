@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Header from './components/Header';
 import Tasks from './components/Tasks';
+import AddTask from './components/AddTask';
 
 // Component using JSX
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
+      <AddTask />
       {/* Use the Task component within the Tasks component */}
       {/* Use the fsc above to make it a prop */}
       {tasks.length > 0 ? (
