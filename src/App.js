@@ -70,8 +70,7 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            exact
-            render={(props) => (
+            element={
               <>
                 {/* Shorter way of doing the turnary. If showAddTask is true then do the AddTask component */}
                 {showAddTask && <AddTask onAdd={addTask} />}
@@ -87,9 +86,9 @@ const App = () => {
                   'No tasks!'
                 )}
               </>
-            )}
+            }
           />
-          <Route path="/about" component={About} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </div>
