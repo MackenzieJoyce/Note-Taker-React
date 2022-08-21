@@ -50,7 +50,8 @@ const AddTask = ({ onAdd }) => {
           checked={reminder}
           //   Setting to just reminder means it is false/unchecked
           value={reminder}
-          onChange={(e) => setReminder(e.currentValue.checked)}
+          style={{ cursor: 'pointer' }}
+          onChange={(e) => setReminder(e.currentTarget.checked)}
         />
       </div>
 
