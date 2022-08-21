@@ -21,10 +21,15 @@ const App = () => {
     }
   ]);
 
-  // Add Task 
-  const addTask = (task) => { 
-
-  }
+  // Add Task - Adds to the state 
+  const addTask = (task) => {
+    // Creates an id because I'm not using any backend right now 
+    const id = Math.floor(Math.random() * 10000) + 1
+    // The new task is going to be an object. It's going to use the id from the random number above and then copy the other keys from the task array 
+    const newTask = { id, ...task }
+    // Copy the current tasks and add the new task onto that array 
+    setTasks([...tasks, newTask])
+  };
 
   // Delete Task
   const deleteTask = (id) => {
@@ -35,12 +40,16 @@ const App = () => {
   };
 
   // Toggle Reminder
-  const toggleReminder = (id) => { 
-    setTasks(tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder } : task));
-    // .map = go through each task 
-    // If they did double click, copy this fxn to every task and change the Boolean on the task 
-    // Else, leave the task as is because the user did not click on the task 
-  }
+  const toggleReminder = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, reminder: !task.reminder } : task
+      )
+    );
+    // .map = go through each task
+    // If they did double click, copy this fxn to every task and change the Boolean on the task
+    // Else, leave the task as is because the user did not click on the task
+  };
 
   return (
     <div className="container">
