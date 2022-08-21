@@ -59,7 +59,7 @@ const App = () => {
       {/* Giving a prop for the Header component to use */}
       {/* Says when the Add button is clicked give the opposite of the current value */}
       {/* So on load the value is false, when clicked show it as true, which is to make it the setShowAddTask */}
-      <Header onAdd={() => setShowAddTask(!showAddTask)} />
+      <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
       {/* Shorter way of doing the turnary. If showAddTask is true then do the AddTask component */}
       {showAddTask && <AddTask onAdd={addTask} />}
       {/* Use the Task component within the Tasks component */}
