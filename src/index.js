@@ -1,7 +1,10 @@
 import React from 'react';
+// Library 
 import ReactDOM from 'react-dom/client';
+// Renders onto DOM 
 import './index.css';
 import App from './App';
+// Contains root app component 
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
