@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Header from './components/Header';
 import Tasks from './components/Tasks';
@@ -67,29 +67,30 @@ const App = () => {
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}
         />
-
-        <Route
-          path="/"
-          exact
-          render={(props) => (
-            <>
-              {/* Shorter way of doing the turnary. If showAddTask is true then do the AddTask component */}
-              {showAddTask && <AddTask onAdd={addTask} />}
-              {/* Use the Task component within the Tasks component */}
-              {/* Use the fsc above to make it a prop */}
-              {tasks.length > 0 ? (
-                <Tasks
-                  tasks={tasks}
-                  onDelete={deleteTask}
-                  onToggle={toggleReminder}
-                />
-              ) : (
-                'No tasks!'
-              )}
-            </>
-          )}
-        />
-        <Route path="/about" component={About} />
+        <Routes>
+          <Route
+            path="/"
+            exact
+            render={(props) => (
+              <>
+                {/* Shorter way of doing the turnary. If showAddTask is true then do the AddTask component */}
+                {showAddTask && <AddTask onAdd={addTask} />}
+                {/* Use the Task component within the Tasks component */}
+                {/* Use the fsc above to make it a prop */}
+                {tasks.length > 0 ? (
+                  <Tasks
+                    tasks={tasks}
+                    onDelete={deleteTask}
+                    onToggle={toggleReminder}
+                  />
+                ) : (
+                  'No tasks!'
+                )}
+              </>
+            )}
+          />
+          <Route path="/about" component={About} />
+        </Routes>
         <Footer />
       </div>
     </Router>
