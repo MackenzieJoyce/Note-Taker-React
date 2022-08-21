@@ -1,12 +1,13 @@
+import Task from './Task'
 
 const Tasks = ({ tasks }) => {    
   return (
     <>
-      {/* .map to create a list */}
-      {/* Each task is named task */}
-      {/* Set the element (h3) and give the information you want to see */}
-      {tasks.map((task) => (
-        <h3 key={task.id}>{task.text}</h3>
+      {/* .map to loop through the array */}
+      {/*  */}
+          {tasks.map((task) => (
+        //   Task component and passing task in as a prop
+          <Task key={task.id} task={task} />
       ))}
       ;
     </>
