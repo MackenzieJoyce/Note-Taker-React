@@ -19,7 +19,7 @@ const location = useLocation()
 };
 
 Header.defaultProps = {
-  title: 'Task Tracker'
+  title: 'Note Taker'
 };
 
 Header.propTypes = {
